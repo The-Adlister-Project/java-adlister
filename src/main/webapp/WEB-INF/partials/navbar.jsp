@@ -43,32 +43,7 @@
 
 
 
-<%--<nav class="navbar navbar-default">--%>
-<%--    <div class="container-fluid">--%>
 
-<%--        <div class="navbar-header">--%>
-<%--            <a class="navbar-brand" href="/index">Adlister</a>--%>
-<%--            <a class="navbar-brand" href="/ads">Ads</a>--%>
-<%--        </div>--%>
-<%--        <div>--%>
-<%--            <input type="text" placeholder="Search..">--%>
-<%--        </div>--%>
-<%--        <ul class="nav navbar-nav navbar-right">--%>
-<%--            <li><a href="/register">Register</a></li>--%>
-<%--            <li><a href="/login">Login</a></li>--%>
-<%--            <li><a href="/profile">Profile</a></li>--%>
-<%--            <li><a href="/logout">Logout</a></li>--%>
-<%--            <li class="dropdown right">--%>
-<%--                <a href="javascript:void(0)" class="dropbtn">Categories</a>--%>
-<%--                <div class="dropdown-content">--%>
-<%--                    <a href="#">For Sale</a>--%>
-<%--                    <a href="#">Automotive</a>--%>
-<%--                    <a href="#">Looking For</a>--%>
-<%--                </div>--%>
-<%--            </li>--%>
-<%--        </ul>--%>
-<%--    </div>--%>
-<%--</nav>--%>
 
 
 
