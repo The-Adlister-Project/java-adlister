@@ -11,33 +11,26 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "controllers.LoginServlet", urlPatterns = "/login")
-public class LoginServlet extends HttpServlet {
+
+@WebServlet(name = "controllers.UpdateServlet", urlPatterns = "/updateprofile")
+public class UpdateServlet extends HttpServlet {
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (request.getSession().getAttribute("user") != null) {
-            response.sendRedirect("/profile");
+            response.sendRedirect("/updateprofile");
             return;
         }
-        request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = request.getParameter("username");
+        String email = request.getParameter("email");
         String password = request.getParameter("password");
-        User user = DaoFactory.getUsersDao().findByUsername(username);
+        String passwordConfirmation = request.getParameter("confirm_password");
 
-        if (user == null) {
-            response.sendRedirect("/register");
-            return;
-        }
-
-        boolean validAttempt = Password.check(password, user.getPassword());
-
-        if (validAttempt) {
-            request.getSession().setAttribute("user", user);
-            response.sendRedirect("/profile");
-        } else {
-            response.sendRedirect("/login");
-        }
+        User user = new User(username, email, Password.hash(password));
+        DaoFactory.getUsersDao().update(user);
+        response.sendRedirect("/profile");
     }
 }
