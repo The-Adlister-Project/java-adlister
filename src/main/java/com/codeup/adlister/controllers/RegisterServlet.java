@@ -27,9 +27,9 @@ public class RegisterServlet extends HttpServlet {
 
         // validate input
         boolean inputHasErrors = username.isEmpty()
-            || email.isEmpty()
-            || password.isEmpty()
-            || (! password.equals(passwordConfirmation));
+                || email.isEmpty()
+                || password.isEmpty()
+                || (! password.equals(passwordConfirmation));
 
         if (userExists != null){
             response.sendRedirect("/register");
