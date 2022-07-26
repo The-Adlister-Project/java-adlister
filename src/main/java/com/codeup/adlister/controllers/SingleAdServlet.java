@@ -26,6 +26,11 @@ public class SingleAdServlet extends HttpServlet {
         int id = Integer.parseInt(req.getParameter("ad_id"));
         System.out.println(id);
         req.setAttribute("ad", DaoFactory.getAdsDao().all().get(id - 1));
+
+
         req.getRequestDispatcher("WEB-INF/ads/soloAd.jsp").forward(req,res);
     }
+
+
 }
+
