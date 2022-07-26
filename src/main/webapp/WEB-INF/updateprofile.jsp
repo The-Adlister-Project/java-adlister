@@ -3,7 +3,7 @@
 <head>
   <title>Edit Your Profile</title>
 </head>
-<form action="/updateprofile" method="POST">
+<form action="/update" method="POST">
   <div class="form-group">
     <label for="username">Username</label>
     <input id="username" name="username" class="form-control" type="text">

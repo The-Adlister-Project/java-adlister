@@ -7,7 +7,16 @@
   </jsp:include>
 </head>
 <body>
-<jsp:include page="/WEB-INF/partials/navbar.jsp"/>
+
+<c:if test="${user == null}">
+  <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
+</c:if>
+
+<c:if test="${user != null}">
+  <jsp:include page="/WEB-INF/partials/profile-nav.jsp"/>
+</c:if>
+
+
 <div class="container">
   <h2>${ad.title}</h2>
   <h5>User Id: ${ad.userId}, User Name ${user.username}</h5>

@@ -7,7 +7,17 @@
     </jsp:include>
 </head>
 <body>
-<jsp:include page="/WEB-INF/partials/navbar.jsp"/>
+
+<c:if test="${user == \"null\"}">
+    <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
+</c:if>
+
+<c:if test="${user != \"null\"}">
+    <jsp:include page="/WEB-INF/partials/profile-nav.jsp"/>
+</c:if>
+
+
+
 <div class="container">
     <h1>Here Are all the ads!</h1>
     <form action="/soloAd" method="post">
