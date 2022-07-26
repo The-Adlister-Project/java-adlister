@@ -1,3 +1,4 @@
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -7,13 +8,10 @@
     </jsp:include>
 </head>
 <body>
-<jsp:include page="/WEB-INF/partials/navbar.jsp"/>
+<jsp:include page="/WEB-INF/partials/profile-nav.jsp"/>
 
 <div class="container">
     <h1>Welcome, ${sessionScope.user.username}!</h1>
-    <form action="/profile" method="POST">
-        <button type="submit" class="btn btn-primary" name="update">Edit Profile</button>
-    </form>
 </div>
 
 <c:forEach var="ad" items="${ads}">
