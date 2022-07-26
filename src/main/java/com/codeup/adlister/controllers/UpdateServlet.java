@@ -1,3 +1,4 @@
+
 package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
@@ -39,7 +40,7 @@ public class UpdateServlet extends HttpServlet {
             user.setUsername(username);
         }
 
-    User test = new User(user.getId(),username, email,Password.hash(password));
+        User test = new User(user.getId(),username, email,Password.hash(password));
         DaoFactory.getUsersDao().update(test);
 
         response.sendRedirect("/profile");
