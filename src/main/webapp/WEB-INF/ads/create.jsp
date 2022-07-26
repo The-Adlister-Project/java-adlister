@@ -7,6 +7,7 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
+<<<<<<< HEAD
     <div class="container">
         <h1>Create a new Ad</h1>
         <form action="/ads/create" method="post">
@@ -22,5 +23,22 @@
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+=======
+<div class="container">
+    <h1>Create a new Ad</h1>
+    <form action="/ads/create" method="post">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input id="title" name="title" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" class="form-control" type="text"></textarea>
+        </div>
+        <input type="submit" class="btn btn-block btn-primary">
+    </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+>>>>>>> 0fe998e2e780fb30012146401c33b30025af543b
 </body>
 </html>
