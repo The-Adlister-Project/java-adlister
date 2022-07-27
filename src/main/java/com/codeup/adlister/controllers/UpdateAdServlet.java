@@ -33,12 +33,15 @@ String description = req.getParameter("description");
 //    ad.setId();
 //}
 
-Ad modify = new Ad(ad.getId(), title, description);
+Ad modify = new Ad (1, 1, title, description);
         DaoFactory.getAdsDao().update(modify);
-        if (req.getParameter("editButton") != null) {
-            resp.sendRedirect("/profile");
+        if (req.getParameter("edit-ad") != null) {
+//            resp.sendRedirect("/profile");
+            System.out.println(modify);
         }
-
+req.getRequestDispatcher("/WEB-INF/profile.jsp");
     }
+
+
 
 }

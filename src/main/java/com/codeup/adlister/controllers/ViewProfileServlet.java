@@ -47,4 +47,7 @@ public class ViewProfileServlet extends HttpServlet {
             resp.sendRedirect("/updatead");
         }
     }
+
+
+
 }
