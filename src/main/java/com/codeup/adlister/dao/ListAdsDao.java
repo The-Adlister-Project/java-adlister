@@ -8,11 +8,21 @@ import java.util.List;
 public class ListAdsDao implements Ads {
     private List<Ad> ads;
 
+    @Override
+    public Ad findOne(Long id) {
+        return null;
+    }
+
     public List<Ad> all() {
         if (ads == null) {
             ads = generateAds();
         }
         return ads;
+    }
+
+    @Override
+    public Ad findOne(long id) {
+        return null;
     }
 
     public Long insert(Ad ad) {
@@ -25,6 +35,16 @@ public class ListAdsDao implements Ads {
         ad.setId((long) ads.size());
         ads.add(ad);
         return ad.getId();
+    }
+
+    @Override
+    public void destroy(Ad ad) {
+
+    }
+
+    @Override
+    public Long update(Ad ad) {
+        return null;
     }
 
     private List<Ad> generateAds() {

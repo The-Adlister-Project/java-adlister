@@ -21,11 +21,14 @@ public class ViewProfileServlet extends HttpServlet {
         Ads adsDao = DaoFactory.getAdsDao();
         List<Ad> ads = adsDao.all();
 
+
+
         List<Ad> userAd = new ArrayList<>();
         if (user == null) {
             response.sendRedirect("/login");
             return;
         }
+
 
         for (Ad ad : ads) {
             if (ad.getUserId() == user.getId()) {
@@ -37,4 +40,11 @@ public class ViewProfileServlet extends HttpServlet {
         request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
     }
 
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        if (req.getParameter("editButton") != null) {
+            resp.sendRedirect("/updatead");
+        }
+    }
 }
