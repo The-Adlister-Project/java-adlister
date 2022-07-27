@@ -16,7 +16,12 @@
 
 <c:forEach var="ad" items="${ads}">
     <h3>${ad.title}</h3>
+    <form action="/profile" method="post">
+        <button type="submit" name="delete" value="${ad.id}">Delete</button>
+    </form>
 </c:forEach>
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -37,4 +37,18 @@ public class ViewProfileServlet extends HttpServlet {
         request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
     }
 
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String id = req.getParameter("delete");
+
+
+
+        if (id != null) {
+            DaoFactory.getAdsDao().deleteAd(id);
+            resp.sendRedirect("/profile");
+        } else {
+            req.getRequestDispatcher("WEB-INF/profile.jsp").forward(req, resp);
+        }
+    }
+
 }
