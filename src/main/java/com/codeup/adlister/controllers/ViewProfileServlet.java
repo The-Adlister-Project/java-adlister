@@ -41,7 +41,11 @@ public class ViewProfileServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id = req.getParameter("delete");
 
+        String edit = req.getParameter("edit");
 
+        if (edit != null){
+            System.out.println(edit + " this is from profile servlet");
+        }
 
         if (id != null) {
             DaoFactory.getAdsDao().deleteAd(id);

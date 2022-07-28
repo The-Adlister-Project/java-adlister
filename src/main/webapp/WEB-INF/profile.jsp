@@ -16,6 +16,9 @@
 
 <c:forEach var="ad" items="${ads}">
     <h3>${ad.title}</h3>
+    <form action="/edit" method="post">
+        <button type="submit" name="edit" value="${ad.id}">Edit</button>
+    </form>
     <form action="/profile" method="post">
         <button type="submit" name="delete" value="${ad.id}">Delete</button>
     </form>

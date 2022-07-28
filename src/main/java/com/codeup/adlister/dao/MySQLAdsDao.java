@@ -83,4 +83,21 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("from delete ad method", e);
         }
     }
+
+    public Long editAd (String title,String description,Long id){
+        String query = "UPDATE ads SET title = ?,description = ? WHERE ads.id = ?;";
+        try {
+            PreparedStatement ps = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+            ps.setString(1, title);
+            ps.setString(2,description);
+            ps.setLong(3, id);
+            ps.executeUpdate();
+            return 1L;
+        } catch (SQLException e){
+            throw new RuntimeException("from edit ad method", e);
+        }
+
+
+    }
+
 }
