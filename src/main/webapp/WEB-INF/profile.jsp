@@ -24,6 +24,13 @@
     </form>
 </c:forEach>
 
+<c:if test="${categoryAds != null}">
+    <c:forEach var="ad" items="${categoryAds}">
+        <p>${ad.title}</p>
+        <p>${ad.description}</p>
+    </c:forEach>
+</c:if>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

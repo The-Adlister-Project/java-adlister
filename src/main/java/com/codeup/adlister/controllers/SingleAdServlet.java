@@ -31,7 +31,8 @@ public class SingleAdServlet extends HttpServlet {
         HttpSession session = req.getSession();
         int id = Integer.parseInt(req.getParameter("ad_id"));
         System.out.println(id);
-        req.setAttribute("ad", DaoFactory.getAdsDao().all().get(id - 1));
+        //todo: this is where scott took out the - 1
+        req.setAttribute("ad", DaoFactory.getAdsDao().all().get(id));
         req.getRequestDispatcher("WEB-INF/ads/soloAd.jsp").forward(req, res);
     }
 }

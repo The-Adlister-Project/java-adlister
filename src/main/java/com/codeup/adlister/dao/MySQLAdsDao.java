@@ -96,8 +96,6 @@ public class MySQLAdsDao implements Ads {
         } catch (SQLException e){
             throw new RuntimeException("from edit ad method", e);
         }
-
-
     }
 
 }
