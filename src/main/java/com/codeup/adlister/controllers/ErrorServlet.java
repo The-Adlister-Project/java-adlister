@@ -12,6 +12,9 @@ public class ErrorServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        req.getSession().invalidate();
+
         req.getRequestDispatcher("WEB-INF/error.jsp").forward(req,resp);
     }
 }

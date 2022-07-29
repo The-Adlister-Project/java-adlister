@@ -35,14 +35,17 @@ public class UpdateServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String passwordConfirmation = request.getParameter("confirm_password");
+        try {
+            if (username != null) {
+                user.setUsername(username);
+            }
 
-        if(username != null){
-            user.setUsername(username);
+            User test = new User(user.getId(), username, email, Password.hash(password));
+            DaoFactory.getUsersDao().update(test);
+
+            response.sendRedirect("/profile");
+        } catch (Exception e) {
+            response.sendRedirect("/error");
         }
-
-        User test = new User(user.getId(),username, email,Password.hash(password));
-        DaoFactory.getUsersDao().update(test);
-
-        response.sendRedirect("/profile");
     }
 }
