@@ -2,7 +2,6 @@ package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.models.User;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,24 +14,17 @@ import java.io.IOException;
 public class SingleAdServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-
         User user = (User) request.getSession().getAttribute("user");
-
         request.setAttribute("user", user.getUsername());
-
         String ad_id = (String) session.getAttribute("id");
         request.setAttribute("id", ad_id);
-        System.out.println(ad_id);
         request.getRequestDispatcher("/WEB-INF/ads/soloAd.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        HttpSession session = req.getSession();
         int id = Integer.parseInt(req.getParameter("ad_id"));
-        System.out.println(id);
-        //todo: this is where scott took out the - 1
-        req.setAttribute("ad", DaoFactory.getAdsDao().all().get(id));
+        req.setAttribute("ad", DaoFactory.getAdsDao().selectById(Long.parseLong(String.valueOf(id))));
         req.getRequestDispatcher("WEB-INF/ads/soloAd.jsp").forward(req, res);
     }
 }

@@ -68,6 +68,7 @@ public class MySQLCatAdDao implements Cats_Ads{
             ResultSet rs = ps.executeQuery();
             while (rs.next()){
                 catAds.add(new Cat_Ad(
+                        rs.getInt("id"),
                         rs.getInt("ad_id"),
                         rs.getInt("cat_id")
                 ));
@@ -79,14 +80,29 @@ public class MySQLCatAdDao implements Cats_Ads{
 
     }
 
-    public Long editCat (Long cat_id, Long ad_id) {
-        String query = "UPDATE cat_ads SET cat_id = ? WHERE ad_id = ?;";
+    public Long deleteCat (Long ad_id) {
+        String query = "DELETE FROM cat_ads WHERE ad_id = ?;";
         try {
             PreparedStatement ps = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
-            ps.setLong(1, cat_id);
-            ps.setLong(2, ad_id);
+            ps.setLong(1, ad_id);
             ps.executeUpdate();
             return 1L;
+        } catch (SQLException e){
+            throw new RuntimeException("edit cat", e);
+        }
+
+    }
+
+    public Long editCat(Long set_id, Long id){
+        String query = " UPDATE cat_ads SET cat_id = ? WHERE id = ?;";
+        try {
+            PreparedStatement ps = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+
+            ps.setLong(1,set_id);
+            ps.setLong(2, id);
+
+
+           return Long.parseLong(String.valueOf(ps.executeUpdate()));
         } catch (SQLException e){
             throw new RuntimeException("edit cat", e);
         }

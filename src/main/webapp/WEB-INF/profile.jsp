@@ -11,11 +11,11 @@
 <jsp:include page="/WEB-INF/partials/profile-nav.jsp"/>
 
 <div class="container">
-    <h1>Welcome, ${sessionScope.user.username}!</h1>
+    <h1>Welcome, <c:out value="${sessionScope.user.username}" />!</h1>
 </div>
 
 <c:forEach var="ad" items="${ads}">
-    <h3>${ad.title}</h3>
+    <h3><c:out value="${ad.title}" /></h3>
     <form action="/edit" method="post">
         <button type="submit" name="edit" value="${ad.id}">Edit</button>
     </form>
@@ -26,8 +26,8 @@
 
 <c:if test="${categoryAds != null}">
     <c:forEach var="ad" items="${categoryAds}">
-        <p>${ad.title}</p>
-        <p>${ad.description}</p>
+        <p><c:out value="${ad.title}" /></p>
+        <p><c:out value="${ad.description}" /></p>
     </c:forEach>
 </c:if>
 

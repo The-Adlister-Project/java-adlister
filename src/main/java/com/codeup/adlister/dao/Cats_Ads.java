@@ -12,7 +12,9 @@ Long insert(Long ad_id, Long cat_id);
 
  List<Cat_Ad> allCatId(Long cat_id);
  List<Cat_Ad> allAdId(Long ad_id);
- Long editCat (Long cat_id, Long ad_id);
+ Long deleteCat (Long ad_id);
+
+ Long editCat(Long set_id, Long id);
 
 //    Long insertCat(Long cat_id);
 //

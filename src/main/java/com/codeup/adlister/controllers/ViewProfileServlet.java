@@ -3,9 +3,7 @@ package com.codeup.adlister.controllers;
 import com.codeup.adlister.dao.Ads;
 import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.models.Ad;
-import com.codeup.adlister.models.Category;
 import com.codeup.adlister.models.User;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -41,14 +39,11 @@ public class ViewProfileServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id = req.getParameter("delete");
+        String t = (String) req.getSession().getAttribute("edit_id");
 
-        String edit = req.getParameter("edit");
-
-        if (edit != null){
-            System.out.println(edit + " this is from profile servlet");
+        if (t != null){
+            System.out.println(t + " this is from view profile");
         }
-
-
 
         //todo: scotts work
         String search = req.getParameter("search");
@@ -57,15 +52,11 @@ public class ViewProfileServlet extends HttpServlet {
         String antiques = req.getParameter("antiques");
         String automotive = req.getParameter("automotive");
         String lookingFor = req.getParameter("lookingFor");
-        String created = (String) req.getSession().getAttribute("created");
-
 
         if (search != null) {
            List<Ad> categories = DaoFactory.getCategoriesDao().findByCategory(search);
             req.setAttribute("categoryAds", categories);
         }
-
-
 
         if (forSale != null) {
             forSale = "For Sale";
@@ -78,8 +69,6 @@ public class ViewProfileServlet extends HttpServlet {
             List<Ad> categories = DaoFactory.getCategoriesDao().findByCategory(jobs);
             req.setAttribute("categoryAds", categories);
         }
-
-
 
         if (antiques != null) {
             antiques = "Antiques";
@@ -99,20 +88,11 @@ public class ViewProfileServlet extends HttpServlet {
             req.setAttribute("categoryAds", categories);
         }
 
-
-
-
-
-
-
         if (id != null) {
             DaoFactory.getAdsDao().deleteAd(id);
             resp.sendRedirect("/profile");
         } else {
             req.getRequestDispatcher("WEB-INF/profile.jsp").forward(req, resp);
         }
-
-
-
     }
 }

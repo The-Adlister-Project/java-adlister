@@ -64,24 +64,24 @@ public class CreateAdServlet extends HttpServlet {
 
 
         if (category1 != null){
-            request.getSession().setAttribute("creation1", category1);
-//            request.getRequestDispatcher("/category").forward(request,response);
+            request.setAttribute("creation1", category1);
+            category1 = null;
         }
         if (category2 != null){
-            request.getSession().setAttribute("creation2", category2);
-//            request.getRequestDispatcher("/category").forward(request,response);
+            request.setAttribute("creation2", category2);
+            category2 = null;
         }
         if (category3 != null){
-            request.getSession().setAttribute("creation3", category3);
-//            request.getRequestDispatcher("/category").forward(request,response);
+            request.setAttribute("creation3", category3);
+            category3 = null;
         }
         if (category4 != null){
-            request.getSession().setAttribute("creation4", category4);
-//            request.getRequestDispatcher("/category").forward(request,response);
+            request.setAttribute("creation4", category4);
+            category4 = null;
         }
         if (category5 != null){
-            request.getSession().setAttribute("creation5", category5);
-//            request.getRequestDispatcher("/category").forward(request,response);
+            request.setAttribute("creation5", category5);
+            category5 = null;
         }
         request.getRequestDispatcher("/category").forward(request,response);
     }

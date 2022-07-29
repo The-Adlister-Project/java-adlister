@@ -18,9 +18,9 @@
 
 
 <div class="container">
-  <h2>${ad.title}</h2>
-  <h5>User Id: ${ad.userId}, User Name ${user.username}</h5>
-  <h3>${ad.description}</h3>
+  <h2><c:out value="${ad.title}" /></h2>
+  <h5>User Id: <c:out value="${ad.userId}" />, User Name <c:out value="${user.username}" /></h5>
+  <h3><c:out value="${ad.description}" /></h3>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
