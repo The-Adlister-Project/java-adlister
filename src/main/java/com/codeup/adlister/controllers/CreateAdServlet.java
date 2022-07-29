@@ -58,32 +58,35 @@ public class CreateAdServlet extends HttpServlet {
 //        if (category != null){
 //            System.out.println(category);
 //        }
+        try {
+            Ad newAd = new Ad(user.getId(), title, description);
+            DaoFactory.getAdsDao().insert(newAd);
 
-        Ad newAd = new Ad(user.getId(), title, description);
-        DaoFactory.getAdsDao().insert(newAd);
 
-
-        if (category1 != null){
-            request.setAttribute("creation1", category1);
-            category1 = null;
+            if (category1 != null) {
+                request.setAttribute("creation1", category1);
+                category1 = null;
+            }
+            if (category2 != null) {
+                request.setAttribute("creation2", category2);
+                category2 = null;
+            }
+            if (category3 != null) {
+                request.setAttribute("creation3", category3);
+                category3 = null;
+            }
+            if (category4 != null) {
+                request.setAttribute("creation4", category4);
+                category4 = null;
+            }
+            if (category5 != null) {
+                request.setAttribute("creation5", category5);
+                category5 = null;
+            }
+            request.getRequestDispatcher("/category").forward(request, response);
+        } catch (Exception e){
+            response.sendRedirect("/error");
         }
-        if (category2 != null){
-            request.setAttribute("creation2", category2);
-            category2 = null;
-        }
-        if (category3 != null){
-            request.setAttribute("creation3", category3);
-            category3 = null;
-        }
-        if (category4 != null){
-            request.setAttribute("creation4", category4);
-            category4 = null;
-        }
-        if (category5 != null){
-            request.setAttribute("creation5", category5);
-            category5 = null;
-        }
-        request.getRequestDispatcher("/category").forward(request,response);
     }
 
 }

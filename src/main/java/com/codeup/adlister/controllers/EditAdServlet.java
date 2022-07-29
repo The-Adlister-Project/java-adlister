@@ -69,13 +69,15 @@ public class EditAdServlet extends HttpServlet {
         List<Cat_Ad> catAds = null;
 
         if (ad_id != null) {
-            DaoFactory.getCatAdsDao().deleteCat(Long.parseLong(ad_id));
-            catAds = DaoFactory.getCatAdsDao().allAdId(Long.parseLong(ad_id));
-            DaoFactory.getAdsDao().editAd(title, description, Long.parseLong(ad_id));
-
-            req.setAttribute("ad_id", ad_id);
-
-            req.getRequestDispatcher("/category").forward(req,res);
+            try {
+                DaoFactory.getCatAdsDao().deleteCat(Long.parseLong(ad_id));
+                catAds = DaoFactory.getCatAdsDao().allAdId(Long.parseLong(ad_id));
+                DaoFactory.getAdsDao().editAd(title, description, Long.parseLong(ad_id));
+                req.setAttribute("ad_id", ad_id);
+                req.getRequestDispatcher("/category").forward(req, res);
+            } catch (Exception e) {
+                res.sendRedirect("/error");
+            }
         } else {
             req.getRequestDispatcher("WEB-INF/ads/edit.jsp").forward(req, res);
         }

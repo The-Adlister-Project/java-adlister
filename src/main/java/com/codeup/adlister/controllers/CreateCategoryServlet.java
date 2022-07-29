@@ -40,47 +40,54 @@ public class CreateCategoryServlet extends HttpServlet {
 
 
         if(ad_id != null) {
-            if (c1 != null) {
-                System.out.println(c1 + " this is from create category!");
-            DaoFactory.getCatAdsDao().insert(Long.parseLong(ad_id), Long.parseLong(c1));
-            }
-            if (c2 != null) {
-                System.out.println(c2);
-            DaoFactory.getCatAdsDao().insert(Long.parseLong(ad_id), Long.parseLong(c2));
-            }
-            if (c3 != null) {
-                System.out.println(c3);
-            DaoFactory.getCatAdsDao().insert(Long.parseLong(ad_id), Long.parseLong(c3));
-            }
-            if (c4 != null) {
-                System.out.println(c4);
-            DaoFactory.getCatAdsDao().insert(Long.parseLong(ad_id), Long.parseLong(c4));
-            }
-            if (c5 != null) {
-                System.out.println(c5);
-            DaoFactory.getCatAdsDao().insert(Long.parseLong(ad_id), Long.parseLong(c5));
+            try {
+                if (c1 != null) {
+                    System.out.println(c1 + " this is from create category!");
+                    DaoFactory.getCatAdsDao().insert(Long.parseLong(ad_id), Long.parseLong(c1));
+                }
+                if (c2 != null) {
+                    System.out.println(c2);
+                    DaoFactory.getCatAdsDao().insert(Long.parseLong(ad_id), Long.parseLong(c2));
+                }
+                if (c3 != null) {
+                    System.out.println(c3);
+                    DaoFactory.getCatAdsDao().insert(Long.parseLong(ad_id), Long.parseLong(c3));
+                }
+                if (c4 != null) {
+                    System.out.println(c4);
+                    DaoFactory.getCatAdsDao().insert(Long.parseLong(ad_id), Long.parseLong(c4));
+                }
+                if (c5 != null) {
+                    System.out.println(c5);
+                    DaoFactory.getCatAdsDao().insert(Long.parseLong(ad_id), Long.parseLong(c5));
+                }
+            } catch (Exception e){
+                resp.sendRedirect("/error");
             }
         } else {
-            System.out.println(ad_id + " this is ad_id");
-            if (category1 != null) {
-                DaoFactory.getCatAdsDao().insert(ad.getId(), Long.parseLong(category1));
-                System.out.println(category1 + " this is cat1");
-            }
-            if (category2 != null) {
-                DaoFactory.getCatAdsDao().insert(ad.getId(), Long.parseLong(category2));
-                System.out.println(category2 + " this is cat2");
-            }
-            if (category3 != null) {
-                DaoFactory.getCatAdsDao().insert(ad.getId(), Long.parseLong(category3));
-                System.out.println(category3 + " this is cat3");
-            }
-            if (category4 != null) {
-                DaoFactory.getCatAdsDao().insert(ad.getId(), Long.parseLong(category4));
-                System.out.println(category4 + " this is cat4");
-            }
-            if (category5 != null) {
-                DaoFactory.getCatAdsDao().insert(ad.getId(), Long.parseLong(category5));
-                System.out.println(category5 + " this is cat5");
+            try {
+                if (category1 != null) {
+                    DaoFactory.getCatAdsDao().insert(ad.getId(), Long.parseLong(category1));
+                    System.out.println(category1 + " this is cat1");
+                }
+                if (category2 != null) {
+                    DaoFactory.getCatAdsDao().insert(ad.getId(), Long.parseLong(category2));
+                    System.out.println(category2 + " this is cat2");
+                }
+                if (category3 != null) {
+                    DaoFactory.getCatAdsDao().insert(ad.getId(), Long.parseLong(category3));
+                    System.out.println(category3 + " this is cat3");
+                }
+                if (category4 != null) {
+                    DaoFactory.getCatAdsDao().insert(ad.getId(), Long.parseLong(category4));
+                    System.out.println(category4 + " this is cat4");
+                }
+                if (category5 != null) {
+                    DaoFactory.getCatAdsDao().insert(ad.getId(), Long.parseLong(category5));
+                    System.out.println(category5 + " this is cat5");
+                }
+            } catch (Exception e){
+                resp.sendRedirect("/error");
             }
         }
         resp.sendRedirect("/profile");
