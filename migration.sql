@@ -9,7 +9,7 @@ CREATE TABLE users
 (
     id       INT UNSIGNED        NOT NULL AUTO_INCREMENT,
     username VARCHAR(240) UNIQUE NOT NULL,
-    email    VARCHAR(240)        NOT NULL,
+    email    VARCHAR(240) UNIQUE NOT NULL,
     password VARCHAR(255)        NOT NULL,
     PRIMARY KEY (id)
 );
@@ -51,6 +51,3 @@ CREATE TABLE cat_ads
     UNIQUE (ad_id, cat_id)
 
 );
-
-
-# select * from ads as a join cat_ads ca on a.id = ca.ad_id join categories c on ca.cat_id = c.id where name = "For Sale";

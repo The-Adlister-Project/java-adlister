@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%--
   Created by IntelliJ IDEA.
   User: kjorgeron0819
@@ -12,7 +14,7 @@
 </jsp:include>
 <body>
 <%@include file="partials/navbar.jsp"%>
-<h1 style="text-align: center">YOU WERE LOGGED OUT DUE TO AN ERROR!</h1>
+<h1 style="text-align: center">YOU ARE HERE DUE TO AN ERROR IN YOUR INPUTS! TRY AGAIN WITH DIFFERENT INFORMATION</h1>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
