@@ -30,11 +30,11 @@
                         <h6>Description:</h6>
                         <p class="card-text">${ad.description}</p>
                         <form action="/edit" method="post">
-                            <button class="btnEdit" type="submit" name="edit" value="${ad.id}"><i
-                                    class="fa-solid fa-pen-to-square"></i></button>
+                            <button class="btnEdit" type="submit" name="edit" value="${ad.id}">
+                                <i class="fa-solid fa-pen-to-square"></i></button>
                             <form action="/profile" method="post">
-                                <button class="btnEdit" type="submit" name="delete" value="${ad.id}"><i
-                                        class="fa-solid fa-trash-can"></i></button>
+                                <button class="btnEdit" type="submit" name="delete" value="${ad.id}">
+                                    <i class="fa-solid fa-trash-can"></i></button>
                             </form>
                         </form>
                     </div>
