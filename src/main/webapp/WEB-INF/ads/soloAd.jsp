@@ -1,3 +1,8 @@
+<%--TODO:
+            YOU HAVE TO STYLE THIS PAGE HOW THE INFORMATION IS.
+            THIS PAGE WILL NOT WORK ON THE BACK END IF YOU CHANGE ANY OF THIS DATA
+--%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>

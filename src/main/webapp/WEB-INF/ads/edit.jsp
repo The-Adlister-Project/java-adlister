@@ -1,3 +1,9 @@
+<%--TODO:
+            YOU HAVE TO STYLE THIS PAGE HOW THE INFORMATION IS.
+            THIS PAGE WILL NOT WORK ON THE BACK END IF YOU CHANGE ANY OF THIS DATA
+--%>
+
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -58,3 +64,4 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+

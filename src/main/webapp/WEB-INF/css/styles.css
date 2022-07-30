@@ -1,0 +1,315 @@
+body#create{background-color: #80A6BE}
+body#login{background-color: #80A6BE}
+body#register{background-color: #80A6BE}
+body#indexAds{background-color: #80A6BE}
+body#editBody{background-color: #80A6BE}
+body#solo{background-color: #80A6BE}
+body#update{background-color: #80A6BE}
+
+.veiwAd {
+    border: none;
+    background: none;
+}
+
+.login  {
+    margin: 20px auto;
+    width: 300px;
+}
+
+.update  {
+    margin: 20px auto;
+    width: 600px;
+}
+
+
+.register {
+    margin: 20px auto;
+    width: 600px;
+}
+
+.create {
+    margin: 20px auto;
+    width: 800px;
+}
+
+.edit {
+    margin: 20px auto;
+    width: 800px;
+}
+
+.login-screen {
+    margin-top: 10px;
+    background-color: #FFF;
+    padding: 20px;
+    border-radius: 5px;
+    border: #444444 solid 3px;
+}
+
+.update-screen {
+    margin-top: 10px;
+    background-color: #FFF;
+    padding: 20px;
+    border-radius: 5px;
+    border: #444444 solid 3px;
+}
+
+.edit-screen {
+    margin-top: 10px;
+    background-color: #FFF;
+    padding: 20px;
+    border-radius: 5px;
+    border: #444444 solid 3px;
+}
+.create-screen {
+    margin-top: 10px;
+    background-color: #FFF;
+    padding: 20px;
+    border-radius: 5px;
+    border: #444444 solid 3px;
+}
+
+.register-screen{
+    margin-top: 10px;
+    background-color: #FFF;
+    padding: 20px;
+    border-radius: 5px;
+    border: #444444 solid 3px;
+}
+
+.app-title {
+    text-align: center;
+    color: #777;
+}
+
+.register-form {
+    text-align: center;
+}
+
+.update-form {
+    text-align: center;
+}
+
+.create-form {
+    text-align: center;
+}
+
+.login-form {
+    text-align: center;
+}
+
+.control-group {
+    margin-bottom: 10px;
+}
+
+input {
+    text-align: center;
+    background-color: #ECF0F1;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 200;
+    padding: 10px 0;
+    width: auto;
+    transition: border .5s;
+}
+
+input:focus {
+    border: 2px solid #3498DB;
+    box-shadow: none;
+}
+
+.btn {
+    border: 2px solid transparent;
+    background: #3498DB;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 25px;
+    padding: 10px 0;
+    text-decoration: none;
+    border-radius: 3px;
+    box-shadow: none;
+    transition: 0.25s;
+    display: block;
+    width: 250px;
+    margin: 0 auto;
+}
+
+.btn:hover {
+    background-color: #2980B9;
+}
+
+.login-link {
+    font-size: 12px;
+    color: #444;
+    display: block;
+    margin-top: 12px;
+}
+
+
+.animated-grid {
+    height: 85vh;
+    display: grid;
+    gap: 0.5rem;
+
+    grid-template-areas:
+        'a   b  c  d'
+        'l  ⭐️ ⭐️ e'
+        'k ⭐️ ⭐️  f'
+        'j  i  h  g';
+
+
+    grid-template-rows:  repeat(4, 25%);
+    grid-template-columns: 240px auto auto 240px;
+
+    --stagger-delay: 100ms;
+
+}
+
+@keyframes cardEntrance {
+
+    from {
+        opacity: 0;
+        transform: scale(0.3);
+        filter: hue-rotate(180deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+        filter: hue-rotate(0deg);
+    }
+}
+
+.card {
+    background-color: #80A6BE;
+    animation: cardEntrance 700ms ease-out;
+    animation-fill-mode: backwards;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+.card-title{
+    text-align: center;
+    background-color: #C9D6D9;
+    font-size: 26px;
+    padding: 0;
+
+}
+.card-body{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: white;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    padding: 0;
+    text-align: center;
+    margin-top: 3px;
+}
+
+.card:nth-child(1) {
+    grid-area: a;
+    animation-delay: calc(1*var(--stagger-delay));
+}
+.card:nth-child(2) {
+    grid-area: b;
+    animation-delay: calc(2*var(--stagger-delay));
+}
+.card:nth-child(3) {
+    grid-area: c;
+    animation-delay: calc(3*var(--stagger-delay));
+}
+.card:nth-child(4) {
+    grid-area: d;
+    animation-delay: calc(4*var(--stagger-delay));
+}
+.card:nth-child(5) {
+    grid-area: e;
+    animation-delay: calc(5*var(--stagger-delay));
+}
+.card:nth-child(6) {
+    grid-area: f;
+    animation-delay: calc(6*var(--stagger-delay));
+}
+.card:nth-child(7) {
+    grid-area: g;
+    animation-delay: calc(7*var(--stagger-delay));
+}
+.card:nth-child(8) {
+    grid-area: h;
+    animation-delay: calc(8*var(--stagger-delay));
+}
+.card:nth-child(9) {
+    grid-area: i;
+    animation-delay: calc(9*var(--stagger-delay));
+}
+.card:nth-child(10) {
+    grid-area: j;
+    animation-delay: calc(10*var(--stagger-delay));
+}
+.card:nth-child(11) {
+    grid-area: k;
+    animation-delay: calc(11*var(--stagger-delay));
+}
+.card:nth-child(12) {
+    grid-area: l;
+    animation-delay: calc(12*var(--stagger-delay));
+}
+.card:nth-child(13) {
+    color: white;
+    text-shadow: 1px 1px 3px black;
+    font-size:100px;
+    font-family: 'Permanent Marker', cursive;
+    grid-area: ⭐️;
+    animation-delay: calc(13*var(--stagger-delay));
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.grid-col1 {
+    grid-column: span 4;
+    height: 100vh;
+    border-right: black solid 2px;
+    margin-right: 10px;
+}
+
+.grid-col1 h1 {
+    height: 125px;
+    background: #80A6BE;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+.inner-box {
+
+    text-align: center;
+    top: 60px;
+}
+
+.grid-col2 {
+    grid-column: span 8;
+}
+
+.grid-item1 {
+    border: white 2px solid;
+    background-color: black;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    top: -50px;
+    float: left;
+}
+
+.btnEdit {
+    background: none;
+    border: none;
+}
+
+.btnUpdate {
+    background: none;
+    border: none;
+}
