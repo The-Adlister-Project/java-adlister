@@ -15,4 +15,6 @@ public interface Categories {
 
     Long editCat (Long cat_id, Long ad_id);
 
+    List<Category> getCategoryName(Long ad_id);
+
 }

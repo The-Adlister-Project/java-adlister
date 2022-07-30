@@ -2,7 +2,9 @@ package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.models.Ad;
+import com.codeup.adlister.models.Category;
 import com.codeup.adlister.models.User;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "controllers.SingleAdServlet", urlPatterns = "/soloAd")
 public class SingleAdServlet extends HttpServlet {
@@ -29,6 +32,10 @@ public class SingleAdServlet extends HttpServlet {
         Ad ad = (Ad) req.getAttribute("ad");
         System.out.println(ad.getUserId());
         req.setAttribute("ad_user", DaoFactory.getUsersDao().findById(ad.getUserId()));
+        List<Category> categoryList = DaoFactory.getCategoriesDao().getCategoryName((long) id);
+
+        req.setAttribute("categories", categoryList);
+
         req.getRequestDispatcher("WEB-INF/ads/soloAd.jsp").forward(req, res);
     }
 }

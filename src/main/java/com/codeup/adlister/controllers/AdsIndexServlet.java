@@ -2,6 +2,8 @@
 package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
+import com.codeup.adlister.models.Ad;
+import com.codeup.adlister.models.Category;
 import com.codeup.adlister.models.User;
 
 import javax.servlet.ServletException;
@@ -11,11 +13,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet(name = "controllers.AdsIndexServlet", urlPatterns = "/ads")
 public class AdsIndexServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("ads", DaoFactory.getAdsDao().all());
+        List<Ad> ads = DaoFactory.getAdsDao().all();
+        request.setAttribute("ads", ads);
         User user = (User) request.getSession().getAttribute("user");
         if (user == null) {
             request.setAttribute("user", "null");
@@ -25,7 +30,9 @@ public class AdsIndexServlet extends HttpServlet {
         }
 
         String id = request.getParameter("ad_id");
-        System.out.println(id + " this is from doGet index");
+
+
+
         request.getRequestDispatcher("/WEB-INF/ads/index.jsp").forward(request, response);
     }
 }

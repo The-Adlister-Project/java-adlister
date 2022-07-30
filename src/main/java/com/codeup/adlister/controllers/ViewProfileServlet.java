@@ -41,7 +41,7 @@ public class ViewProfileServlet extends HttpServlet {
         String id = req.getParameter("delete");
         String t = (String) req.getSession().getAttribute("edit_id");
 
-        if (t != null){
+        if (t != null) {
             System.out.println(t + " this is from view profile");
         }
 
@@ -54,7 +54,7 @@ public class ViewProfileServlet extends HttpServlet {
         String lookingFor = req.getParameter("lookingFor");
 
         if (search != null) {
-           List<Ad> categories = DaoFactory.getCategoriesDao().findByCategory(search);
+            List<Ad> categories = DaoFactory.getCategoriesDao().findByCategory(search);
             req.setAttribute("categoryAds", categories);
         }
 
@@ -95,4 +95,5 @@ public class ViewProfileServlet extends HttpServlet {
             req.getRequestDispatcher("WEB-INF/profile.jsp").forward(req, resp);
         }
     }
+
 }

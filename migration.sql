@@ -51,3 +51,6 @@ CREATE TABLE cat_ads
     UNIQUE (ad_id, cat_id)
 
 );
+
+
+SELECT * , ad_id FROM categories join cat_ads ca on categories.id = ca.cat_id;
