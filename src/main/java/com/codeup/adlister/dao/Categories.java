@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface Categories {
 
+    List<Category> getCategoryName(Long ad_id);
+
     List<Category> all();
 
     Long insert(Category category);

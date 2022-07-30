@@ -11,14 +11,14 @@
                     <a class="nav-link" href="/logout">Logout</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="ads/create">Create An Ad</a>
+                    <a class="nav-link" aria-current="page" href="ads/create">Create An Ad</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/ads">See Ads</a>
+                    <a class="nav-link" aria-current="page" href="/ads">See Ads</a>
                 </li>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/update">Edit Profile</a>
+                    <a class="nav-link" aria-current="page" href="/update">Edit Profile</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -27,18 +27,18 @@
                     </a>
                     <form action="/profile" method="post">
                         <ul class="dropdown-menu">
-                            <button type="submit" style="border: none; text-align: center" name="forSale"
+                            <button type="submit" style="border: none; background: none; text-align: center" name="forSale"
                                     value="For Sale">For Sale
-                            </button>
+                            </button><br>
                             <button type="submit" style="border: none; text-align: center" name="jobs" value="Jobs">
                                 Jobs
-                            </button>
+                            </button><br>
                             <button type="submit" style="border: none; text-align: center" name="antiques"
                                     value="Antiques">Antiques
-                            </button>
+                            </button><br>
                             <button type="submit" style="border: none; text-align: center" name="automotive"
                                     value="Automotive">Automotive
-                            </button>
+                            </button><br>
                             <button type="submit" style="border: none; text-align: center" name="lookingFor"
                                     value="Looking For">Looking For
                             </button>

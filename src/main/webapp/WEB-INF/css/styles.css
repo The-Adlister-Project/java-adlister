@@ -3,13 +3,28 @@ body#login{background-color: #80A6BE}
 body#register{background-color: #80A6BE}
 body#indexAds{background-color: #80A6BE}
 body#editBody{background-color: #80A6BE}
-body#solo{background-color: #80A6BE}
+body#soloBody{background-color: #80A6BE}
 body#update{background-color: #80A6BE}
+body#viewAd{background-color: #80A6BE}
+
+* {
+    box-sizing: border-box;
+}
+
+.main-index-title{
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 30px;
+    text-shadow: 1px 1px 3px black;
+}
 
 .veiwAd {
     border: none;
     background: none;
 }
+
 
 .login  {
     margin: 20px auto;
@@ -21,6 +36,10 @@ body#update{background-color: #80A6BE}
     width: 600px;
 }
 
+.soloAd {
+    margin: 20px auto;
+    width: 800px;
+}
 
 .register {
     margin: 20px auto;
@@ -37,7 +56,21 @@ body#update{background-color: #80A6BE}
     width: 800px;
 }
 
+button{
+    background: none;
+    border: none;
+}
+
 .login-screen {
+    margin-top: 10px;
+    background-color: #FFF;
+    padding: 20px;
+    border-radius: 5px;
+    border: #444444 solid 3px;
+}
+
+.soloAd-screen {
+    text-align: center;
     margin-top: 10px;
     background-color: #FFF;
     padding: 20px;
@@ -101,6 +134,7 @@ body#update{background-color: #80A6BE}
     margin-bottom: 10px;
 }
 
+
 input {
     text-align: center;
     background-color: #ECF0F1;
@@ -145,7 +179,6 @@ input:focus {
     margin-top: 12px;
 }
 
-
 .animated-grid {
     height: 85vh;
     display: grid;
@@ -184,25 +217,26 @@ input:focus {
     background-color: #80A6BE;
     animation: cardEntrance 700ms ease-out;
     animation-fill-mode: backwards;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-
 
 .card-title{
+    color: #ECF0F1;
+    height: 35px;
     text-align: center;
-    background-color: #C9D6D9;
+    background-color: #80A6BE;
     font-size: 26px;
     padding: 0;
-
 }
+
 .card-body{
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    background-color: white;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    padding: 0;
+    animation: cardEntrance 700ms ease-out;
+    animation-fill-mode: backwards;
     text-align: center;
-    margin-top: 3px;
+    border: #ECF0F1 solid 2px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
 }
 
 .card:nth-child(1) {
@@ -267,6 +301,14 @@ input:focus {
     grid-template-columns: repeat(12, 1fr);
 }
 
+.grid-area-2{
+    display: grid;
+    gap: 1rem;
+    grid-column: span 8;
+    grid-template-columns: repeat(4,1fr);
+    grid-auto-rows: 250px;
+}
+
 .grid-col1 {
     grid-column: span 4;
     height: 100vh;
@@ -284,14 +326,10 @@ input:focus {
 }
 
 .inner-box {
-
     text-align: center;
     top: 60px;
 }
 
-.grid-col2 {
-    grid-column: span 8;
-}
 
 .grid-item1 {
     border: white 2px solid;
@@ -312,4 +350,19 @@ input:focus {
 .btnUpdate {
     background: none;
     border: none;
+}
+
+.viewBtn{
+    background: none;
+    border: none;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    margin: 0;
 }

@@ -21,16 +21,16 @@
     <form action="/update" method="post">
       <div class="update-form">
         <div class="control-group">
-          <input id="username" name="username" class="form-control" type="text">
           <label for="username">Username</label>
+          <input id="username" name="username" class="form-control" type="text">
         </div>
         <div class="control-group">
-          <input id="email" name="email" class="form-control" type="text">
           <label for="email">Email</label>
+          <input id="email" name="email" class="form-control" type="text">
         </div>
         <div class="control-group">
-          <input id="password" name="password" class="form-control" type="password">
           <label for="password">Password</label>
+          <input id="password" name="password" class="form-control" type="password">
         </div>
         <button class="btnUpdate" type="submit" name="update" ><i class="fa-solid fa-wrench"></i></button>
       </div>
