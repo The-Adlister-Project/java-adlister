@@ -3,6 +3,7 @@ package com.codeup.adlister.controllers;
 import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.dao.Users;
 import com.codeup.adlister.models.User;
+import com.codeup.adlister.util.Password;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -44,13 +45,30 @@ public class RegisterServlet extends HttpServlet {
 
         // create and save a new user
 
-
+        String url = null;
+        int random = (int) (Math.random() * 5) + 1;
         List<User> users = DaoFactory.getUsersDao().all();
+        if (random == 1){
+            url = "/images/default.webp";
+        }
+        if (random == 2){
+            url = "/images/profile-img.webp";
+        }
+        if (random == 3){
+            url = "/images/random-user1.webp";
+        }
+        if (random == 4){
+            url = "/images/random-user2.webp";
+        }
+        if (random == 5){
+            url = "/images/random-user3.webp";
+        }
+
         try {
-            if (userExists != null) {
+            if (userExists != null && url == null) {
                 response.sendRedirect("/error");
             } else {
-                User user = new User(username, email, password);
+                User user = new User(username, email, Password.hash(password), url);
                 DaoFactory.getUsersDao().insert(user);
                 response.sendRedirect("/login");
             }

@@ -17,6 +17,7 @@ import java.util.List;
 public class ViewProfileServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = (User) request.getSession().getAttribute("user");
+        String url = (String) request.getSession().getAttribute("image");
         Ads adsDao = DaoFactory.getAdsDao();
         List<Ad> ads = adsDao.all();
 
@@ -25,7 +26,7 @@ public class ViewProfileServlet extends HttpServlet {
             response.sendRedirect("/login");
             return;
         }
-
+        System.out.println(user.getUrl() + " : this is from doGet view profile servlet");
         for (Ad ad : ads) {
             if (ad.getUserId() == user.getId()) {
                 userAd.add(ad);
@@ -44,6 +45,8 @@ public class ViewProfileServlet extends HttpServlet {
         if (t != null){
             System.out.println(t + " this is from view profile");
         }
+    User user = (User) req.getSession().getAttribute("user");
+        System.out.println(user.getUrl());
 
         //todo: scotts work
         String search = req.getParameter("search");

@@ -24,7 +24,7 @@
         <c:forEach var="ad" items="${ads}">
             <div class="card-body">
                 <form action="/soloAd" method="post">
-                <h5 class="card-title">${ad.title}</h5>
+                <h5 class="card-title" style="font-size: 16px;">${ad.title}</h5>
                 <h6>Description:</h6>
                 <p class="card-text">${ad.description}</p>
                 <button class="viewBtn" name="ad_id" value="${ad.id}" type="submit"><i

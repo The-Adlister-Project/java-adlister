@@ -16,7 +16,17 @@
 <body>
 <div class="grid">
     <div class="cols grid-col1"><h1>Welcome, ${sessionScope.user.username}!</h1>
-        <div class="grid-item1"></div>
+
+        <%--TODO: ADD PROFILE IMAGE IN THIS DIV BELOW--%>
+
+        <div class="grid-item1">
+            <c:if test="${user.url == null}">
+                <img src="/images/default.webp" alt="default image">
+            </c:if>
+            <c:if test="${user.url != null}">
+                <img src="${sessionScope.user.url}" alt="profile image">
+            </c:if>
+        </div>
         <div class="inner-box" style="font-size: 18px; padding-right: 5px">Hello ${sessionScope.user.username}. Welcome
             back! This is your profile page, you can see, edit and delete your Ads here.
             <br>You can also use the edit profile link to edit your profile information. Enjoy your stay!
@@ -31,10 +41,12 @@
                     <p class="card-text">${ad.description}</p>
                     <div id="container">
                         <form action="/edit" method="post">
-                            <button class="btnEdit" type="submit" name="edit" value="${ad.id}"><i class="fa-solid fa-pen-to-square"></i></button>
+                            <button class="btnEdit" type="submit" name="edit" value="${ad.id}"><i
+                                    class="fa-solid fa-pen-to-square"></i></button>
                         </form>
                         <form action="/profile" method="post">
-                            <button class="btnEdit" type="submit" name="delete" value="${ad.id}"><i class="fa-solid fa-trash"></i></button>
+                            <button class="btnEdit" type="submit" name="delete" value="${ad.id}"><i
+                                    class="fa-solid fa-trash"></i></button>
                         </form>
                     </div>
                 </form>

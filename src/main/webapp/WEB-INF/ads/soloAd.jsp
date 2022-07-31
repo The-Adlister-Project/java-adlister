@@ -37,7 +37,7 @@
         <h5>User Name: <c:out value="${ad_user.username}"/></h5>
         <h3>Description: <c:out value="${ad.description}"/></h3>
         <c:forEach items="${categories}" var="category">
-        <h6>Category:<c:out value="${category.name}"/></h6>
+            <h6>Category:<c:out value="${category.name}"/></h6>
         </c:forEach>
     </div>
 </div>

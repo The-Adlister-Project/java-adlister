@@ -31,7 +31,7 @@
                     <input type="checkbox" id="cat2" name="cat2" value="2">
                     <label for="cat2">Jobs</label>
                     <input type="checkbox" id="cat3" name="cat3" value="3">
-                    <label for="cat3"> Looking For</label>
+                    <label for="cat3">Antiques</label>
                     <input type="checkbox" id="cat4" name="cat4" value="4">
                     <label for="cat4">Automotive</label>
                     <input type="checkbox" id="cat5" name="cat5" value="5">
