@@ -46,21 +46,19 @@ public class RegisterServlet extends HttpServlet {
         // create and save a new user
 
         String url = null;
-        int random = (int) (Math.random() * 5) + 1;
+        int random = (int) (Math.random() * 4) + 1;
         List<User> users = DaoFactory.getUsersDao().all();
+
         if (random == 1){
-            url = "/images/default.webp";
-        }
-        if (random == 2){
             url = "/images/profile-img.webp";
         }
-        if (random == 3){
+        if (random == 2){
             url = "/images/random-user1.webp";
         }
-        if (random == 4){
+        if (random == 3){
             url = "/images/random-user2.webp";
         }
-        if (random == 5){
+        if (random == 4){
             url = "/images/random-user3.webp";
         }
 

@@ -9,8 +9,12 @@ public class User {
     private String password;
     private String url;
 
-    public String getUrl() {
-        return url;
+    public User(long id, String username, String email, String password, String url) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.url = url;
     }
 
     public User(String username, String email, String password, String url) {
@@ -78,5 +82,9 @@ public class User {
 
     public void setPassword(String password) {
         this.password = Password.hash(password);
+    }
+
+    public String getUrl() {
+        return url;
     }
 }

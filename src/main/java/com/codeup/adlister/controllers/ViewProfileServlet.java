@@ -20,11 +20,15 @@ public class ViewProfileServlet extends HttpServlet {
         String url = (String) request.getSession().getAttribute("image");
         Ads adsDao = DaoFactory.getAdsDao();
         List<Ad> ads = adsDao.all();
-
         List<Ad> userAd = new ArrayList<>();
         if (user == null) {
             response.sendRedirect("/login");
             return;
+        }
+        User thisUser = DaoFactory.getUsersDao().findByUsername(user.getUsername());
+        System.out.println(thisUser.getUsername());
+        if (thisUser.getUrl() != null) {
+            System.out.println(thisUser.getUrl());
         }
         System.out.println(user.getUrl() + " : this is from doGet view profile servlet");
         for (Ad ad : ads) {
@@ -32,6 +36,7 @@ public class ViewProfileServlet extends HttpServlet {
                 userAd.add(ad);
             }
         }
+        request.setAttribute("url", thisUser.getUrl());
         request.setAttribute("ads", userAd);
 
         request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
@@ -47,6 +52,9 @@ public class ViewProfileServlet extends HttpServlet {
         }
     User user = (User) req.getSession().getAttribute("user");
         System.out.println(user.getUrl());
+
+        User thisUser = DaoFactory.getUsersDao().findByUsername(user.getUsername());
+        req.setAttribute("url", thisUser.getUrl());
 
         //todo: scotts work
         String search = req.getParameter("search");
